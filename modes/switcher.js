@@ -4,6 +4,7 @@ const Main = imports.ui.main;
 const Shell = imports.gi.Shell;
 const Meta = imports.gi.Meta;
 
+const Util = imports.misc.util;
 const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
 const Convenience = Me.imports.convenience;
@@ -50,6 +51,7 @@ var Switcher = (function() {
 
   let activate = function(app) {
     Main.activateWindow(app);
+    Util.spawn(['./cursor-to-center.sh'])
   };
 
   let description = function(app) {
